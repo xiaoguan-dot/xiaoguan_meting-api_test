@@ -995,7 +995,7 @@ class Meting
         }
 
         if (extension_loaded('bcmath')) {
-            $skey = strrev(utf8_encode($skey));
+            $skey = strrev($skey);
             $skey = $this->bchexdec($this->str2hex($skey));
             $skey = bcpowmod($skey, $pubkey, $modulus);
             $skey = $this->bcdechex($skey);
