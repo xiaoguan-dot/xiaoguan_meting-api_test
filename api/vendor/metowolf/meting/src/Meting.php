@@ -15,6 +15,7 @@ class Meting
 {
     const VERSION = '1.5.11';
 
+    public $temp;
     public $raw;
     public $data;
     public $info;
@@ -731,8 +732,7 @@ class Meting
 			);
 			break;
         }
-        public $temp;
-        $this->temp;
+        $this->temp['br'] = $br;
 
         return $this->exec($api);
     }
