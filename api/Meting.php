@@ -25,6 +25,7 @@ class Meting
     public $proxy = null;
     public $format = false;
     public $header;
+    public $temp;
 
     public function __construct($value = 'netease')
     {
@@ -731,7 +732,8 @@ class Meting
 			);
 			break;
         }
-        $this->temp['br'] = $br;
+        
+        $this->temp;
 
         return $this->exec($api);
     }
