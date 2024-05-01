@@ -44,7 +44,7 @@ header('Access-Control-Allow-Methods: GET');
 
 // include __DIR__ . '/vendor/autoload.php';
 // you can use 'Meting.php' instead of 'autoload.php'
-include __DIR__ . '/src/Meting.php';
+include __DIR__ . '/api/Meting.php';
 
 use Metowolf\Meting;
 
