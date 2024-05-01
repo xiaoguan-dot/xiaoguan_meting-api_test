@@ -15,6 +15,7 @@ class Meting
 {
     const VERSION = '1.5.11';
 
+    public $temp;
     public $raw;
     public $data;
     public $info;
@@ -25,7 +26,6 @@ class Meting
     public $proxy = null;
     public $format = false;
     public $header;
-    public $temp;
 
     public function __construct($value = 'netease')
     {
@@ -732,8 +732,7 @@ class Meting
 			);
 			break;
         }
-        
-        $this->temp;
+        $this->temp['br'] = $br;
 
         return $this->exec($api);
     }
