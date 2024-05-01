@@ -3,7 +3,7 @@
  * Meting music framework
  * https://i-meto.com
  * https://github.com/metowolf/Meting
- * Version 1.5.10.
+ * Version 1.5.11.
  *
  * Copyright 2019, METO Sheel <i@i-meto.com>
  * Released under the MIT license
@@ -13,7 +13,7 @@ namespace Metowolf;
 
 class Meting
 {
-    const VERSION = '1.5.10';
+    const VERSION = '1.5.11';
 
     public $raw;
     public $data;
@@ -424,9 +424,11 @@ class Meting
 			case 'kuwo':
 			$api = array(
 				'method' => 'GET',
-				'url'    => 'http://www.kuwo.cn/api/www/playlist/playListInfo',
+				'url'    => 'http://www.kuwo.cn/api/www/album/albumInfo',
 				'body'   => array(
-					'pid'         => $id,
+					'albumId'     => $id,
+                    'pn'          => 1,
+                    'rn'          => 1000,
 					'httpsStatus' => 1,
 				),
 				'format' => 'data.musicList',
@@ -526,6 +528,8 @@ class Meting
 				'url'    => 'http://www.kuwo.cn/api/www/artist/artistMusic',
 				'body'   => array(
 					'artistid'    => $id,
+                    'pn'          => 1,
+                    'rn'          => $limit,
 					'httpsStatus' => 1,
 				),
 				'format' => 'data.list',
@@ -620,6 +624,8 @@ class Meting
 				'url'    => 'http://www.kuwo.cn/api/www/playlist/playListInfo',
 				'body'   => array(
 					'pid'         => $id,
+                    'pn'          => 1,
+                    'rn'          => 1000,
 					'httpsStatus' => 1,
 				),
 				'format' => 'data.musicList',
@@ -1521,7 +1527,7 @@ class Meting
         $result = array(
             'id'       => $data['rid'],
             'name'     => $data['name'],
-            'artist'   => explode(',', $data['artist']),
+            'artist'   => explode('&', $data['artist']),
             'album'    => $data['album'],
             'pic_id'   => $data['rid'],
             'url_id'   => $data['rid'],
