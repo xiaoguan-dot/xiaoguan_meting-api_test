@@ -731,7 +731,8 @@ class Meting
 			);
 			break;
         }
-        $this->temp['br'] = $br;
+        public $temp;
+        $this->temp;
 
         return $this->exec($api);
     }
