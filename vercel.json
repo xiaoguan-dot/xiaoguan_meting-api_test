@@ -6,7 +6,7 @@
     }
   },
   "routes": [
-    { "src": "/(.*)",  "dest": "/Meting.php" } 
+    { "src": "/(.*)",  "dest": "/Meting.php" },
     { "src": "/(.*)",  "dest": "/index.php" } 
   ]
  
