@@ -4,7 +4,7 @@ define('API_URI', api_uri());
 // 设置中文歌词
 define('TLYRIC', true);
 // 设置歌单文件缓存及时间
-define('CACHE', true);
+define('CACHE', false);
 define('CACHE_TIME', 86400);
 // 设置短期缓存-需要安装apcu
 define('APCU_CACHE', false);
@@ -44,7 +44,7 @@ header('Access-Control-Allow-Methods: GET');
 
 include __DIR__ . '/vendor/autoload.php';
 // you can use 'Meting.php' instead of 'autoload.php'
-// include __DIR__ . '/Meting.php';
+include __DIR__ . '/Meting.php';
 
 use Metowolf\Meting;
 
