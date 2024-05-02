@@ -3,7 +3,7 @@
 use RingCentral\Psr7\Response;
 
 // 设置API访问URL 例：https://yourapi.com/meting
-define('API_URI', api_uri());
+define('API_URI', 'meting');
 // 设置中文歌词
 define('LYRIC_CN', true);
 // 设置文件缓存及时间
