@@ -9,7 +9,7 @@ define('CACHE_TIME', 86400);
 // 设置短期缓存-需要安装apcu
 define('APCU_CACHE', false);
 // 设置AUTH密钥-更改'meting-secret'
-define('AUTH', true);
+define('AUTH', false);
 define('AUTH_SECRET', 'metting-key-xiaoguan');
 
 if (!isset($_GET['type']) || !isset($_GET['id'])) {
@@ -21,15 +21,15 @@ $server = isset($_GET['server']) ? $_GET['server'] : 'netease';
 $type = $_GET['type'];
 $id = $_GET['id'];
 
-if (AUTH) {
-    $auth = isset($_GET['auth']) ? $_GET['auth'] : '';
-    if (in_array($type, ['url', 'pic', 'lrc'])) {
-        if ($auth == '' || $auth != auth($server . $type . $id)) {
-            http_response_code(403);
-            exit;
-        }
-    }
-}
+// if (AUTH) {
+//     $auth = isset($_GET['auth']) ? $_GET['auth'] : '';
+//     if (in_array($type, ['url', 'pic', 'lrc'])) {
+//         if ($auth == '' || $auth != auth($server . $type . $id)) {
+//             http_response_code(403);
+//             exit;
+//         }
+//     }
+// }
 
 // 数据格式
 if (in_array($type, ['song', 'playlist'])) {
@@ -44,7 +44,7 @@ header('Access-Control-Allow-Methods: GET');
 
 include __DIR__ . '/vendor/autoload.php';
 // you can use 'Meting.php' instead of 'autoload.php'
-include __DIR__ . '/Meting.php';
+// include __DIR__ . '/Meting.php';
 
 use Metowolf\Meting;
 
