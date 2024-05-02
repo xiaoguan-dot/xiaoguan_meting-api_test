@@ -9,8 +9,8 @@ define('CACHE_TIME', 86400);
 // 设置短期缓存-需要安装apcu
 define('APCU_CACHE', false);
 // 设置AUTH密钥-更改'meting-secret'
-define('AUTH', false);
-define('AUTH_SECRET', 'meting-secret');
+define('AUTH', true);
+define('AUTH_SECRET', 'metting-key-xiaoguan');
 
 if (!isset($_GET['type']) || !isset($_GET['id'])) {
     include __DIR__ . '/public/index.php';
@@ -43,8 +43,8 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
 
 include __DIR__ . '/vendor/autoload.php';
-you can use 'Meting.php' instead of 'autoload.php'
-include __DIR__ . '/Meting.php';
+// you can use 'Meting.php' instead of 'autoload.php'
+// include __DIR__ . '/Meting.php';
 
 use Metowolf\Meting;
 
